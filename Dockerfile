@@ -15,7 +15,8 @@ RUN pip3 install --upgrade pip && \
         pip install --upgrade pymysql && \
         pip install --upgrade redis && \
         pip install --upgrade bitarray && \
-        pip install --upgrade mmh3
+        pip install --upgrade mmh3 && \
+	pip install --upgrade scrapy-redis
 
 WORKDIR /home/scrapy_project
 
