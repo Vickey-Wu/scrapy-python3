@@ -18,7 +18,8 @@ RUN pip3 install --upgrade pip && \
         pip install --upgrade mmh3 && \
 	pip install --upgrade scrapy-redis
 
-RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+ENV TIME_ZONE Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
 
 WORKDIR /home/scrapy_project
 
