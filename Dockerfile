@@ -18,6 +18,8 @@ RUN pip3 install --upgrade pip && \
         pip install --upgrade mmh3 && \
 	pip install --upgrade scrapy-redis
 
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+
 WORKDIR /home/scrapy_project
 
 CMD touch /var/log/scrapy.log && tail -f /var/log/scrapy.log
