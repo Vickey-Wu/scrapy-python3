@@ -1,6 +1,9 @@
 FROM ubuntu:latest
 MAINTAINER vickeywu <vickeywu557@gmail.com>
 
+ENV TIME_ZONE Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
+
 RUN apt-get update
 
 RUN apt-get install -y python3.6 python3-pip python3-dev && \
@@ -17,9 +20,6 @@ RUN pip3 install --upgrade pip && \
         pip install --upgrade bitarray && \
         pip install --upgrade mmh3 && \
 	pip install --upgrade scrapy-redis
-
-ENV TIME_ZONE Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
 
 WORKDIR /home/scrapy_project
 
