@@ -11,7 +11,7 @@ RUN apt-get clean && \
 
 RUN pip3 install --upgrade pip && \
 	    ln -snf /usr/local/bin/pip3.6 /usr/bin/pip && \
-        pip install --upgrade scrapy && \
+        pip install scrapy==1.6.0 && \
         pip install --upgrade pymysql && \
         pip install --upgrade redis && \
         pip install --upgrade bitarray && \
