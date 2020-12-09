@@ -16,7 +16,9 @@ RUN pip3 install --upgrade pip && \
         pip install --upgrade redis && \
         pip install --upgrade bitarray && \
         pip install --upgrade mmh3 && \
-	pip install --upgrade scrapy-redis
+	pip install --upgrade scrapy-redis \
+	pip install --upgrade scrapy-splash \
+	pip install --upgrade pymongo
 
 ADD ./Shanghai /usr/share/zoneinfo/Asia/Shanghai
 
